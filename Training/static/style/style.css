@@ -1,0 +1,529 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+a {
+	text-decoration: none;
+	color: #333; /* Цвет ссылок */
+}
+
+body {
+	font-family: 'Montserrat', sans-serif; /* Используйте шрифт, похожий на исходный сайт */
+	min-height: 100vh;
+	background: url(../media/back2.png); /* Светлый фон */
+	background-position: center;
+	background-size: cover;
+	color: #333;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 10vh;
+	background: white;
+	padding: 0 7rem;
+	border-bottom: 1px solid #e6e6e6; /* Линия под шапкой */
+}
+
+nav {
+	display: flex;
+	gap: 1.5rem;
+	font-size: 16px;
+}
+
+nav a {
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+}
+
+.logo img {
+	width: 120px;
+	height: auto; /* Поддерживаем пропорции логотипа */
+}
+
+#about-me {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6rem 7rem;
+	background-color: #ffffff; /* Белый фон секции */
+	color: #333;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.photo-me {
+	flex: 1;
+	text-align: center;
+}
+
+.photo-me img {
+	width: 350px;
+	height: auto;
+	border-radius: 10px; /* Скругление углов фото */
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Тень для фото */
+}
+
+.text-of-about-me {
+	flex: 2;
+	padding-left: 3rem;
+}
+
+.text-of-about-me h1 {
+	color: #a02328;
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+}
+
+.text-of-about-me p {
+	font-size: 18px;
+	line-height: 1.8;
+	margin-bottom: 1rem;
+}
+
+.footnotes {
+	display: flex;
+	gap: 2rem;
+	margin-top: 2rem;
+}
+
+.footnotes .block {
+	text-align: center;
+}
+
+.footnotes .block h1 {
+	font-size: 40px;
+	color: #a02328; /* Красный цвет для цифр */
+}
+
+.footnotes .block p {
+	font-size: 16px;
+	font-weight: 500;
+	color: #999;
+}
+
+/* Дополнительные стили */
+main {
+	width: 85%;
+	margin: auto;
+	background-color: #f8f9fa;
+	padding-bottom: 5rem;
+}
+
+/* reviews.html */
+#reviews {
+	background-color: #ffffff; /* Белый фон для контраста с фоном сайта */
+	text-align: center;
+	padding: 4rem 0;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.reviews-container {
+	display: flex;
+	overflow-x: scroll;
+	gap: 20px;
+}
+
+.review-block {
+	background-color: #fff6f4;
+	border: 1px solid #ddd;
+	color: #333;
+	padding: 2rem;
+	height: 40vh;
+	width: 500px;
+	margin-top: 2rem;
+	text-align: left;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	position: relative;
+}
+
+.review-text {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 1rem;
+	color: #333;
+}
+
+/* education.html */
+#education {
+	text-align: center;
+	padding: 4rem 0;
+	background-color: #faf8f7; /* Лёгкий светлый фон для контраста */
+	border-bottom: 1px solid #e6e6e6;
+}
+
+#education h1 {
+	margin-bottom: 4rem;
+}
+
+.slider-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.slider-wrapper {
+	overflow: hidden;
+	width: 100%;
+}
+
+.slider {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+	gap: 20px;
+	/* Теперь ширину слайдера можно не задавать */
+}
+
+.slide {
+	min-width: 300px;
+	flex-shrink: 0;
+	text-align: center;
+}
+
+.slide img {
+	width: 300px; /* Устанавливаем ширину для изображения в соответствии с слайдом */
+	height: 200px;
+	object-fit: cover;
+	border-radius: 0;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prev-btn,
+.next-btn {
+	background-color: transparent;
+	border: none;
+	font-size: 2rem;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 100;
+	color: #333;
+}
+
+.prev-btn {
+	left: -50px;
+}
+
+.next-btn {
+	right: -50px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+	color: #d4a15e;
+}
+
+/* Общие настройки секции услуг */
+#services {
+	text-align: center;
+	padding: 4rem 0;
+	background-color: white;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.tabs {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+.tab {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 10px 30px;
+	margin: 0 10px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+	border-bottom: 3px solid #a02328;
+	color: #a02328;
+}
+
+/* Контейнер с услугами */
+.services-container {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+/* Стиль блоков услуг */
+.service-block {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 2rem;
+	width: 45%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: left;
+	position: relative;
+}
+
+/* Полоска на всю ширину блока */
+.service-info {
+	font-size: 1rem;
+	margin-bottom: 1.5rem;
+	background-color: #faf7f4; /* Светло-бежевый фон */
+	padding: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	box-sizing: border-box; /* Убедимся, что padding не выходит за пределы блока */
+	border-top: 2px solid #d4a15e; /* Разделительная линия сверху */
+	border-bottom: 2px solid #d4a15e; /* Разделительная линия снизу */
+}
+
+/* Разделители между метаданными */
+.service-info span {
+	display: block;
+	color: #666;
+	font-weight: 500;
+	position: relative;
+	text-align: center; /* Центрируем текст */
+	/* Равное распределение элементов */
+	padding: 0 10px;
+}
+
+.service-info span::before {
+	content: '';
+	position: absolute;
+	right: -10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1px;
+	height: 50%;
+	background-color: #d4a15e; /* Цвет разделительных линий */
+}
+
+.service-info span:last-child::before {
+	display: none; /* Убираем разделитель после последнего элемента */
+}
+
+/* Цены */
+.service-price {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	color: #333;
+	text-align: left;
+}
+
+/* Кнопки */
+.apply-button {
+	background-color: #a02328; /* Фирменный цвет для кнопки */
+	color: #fff;
+	border: none;
+	padding: 12px 24px;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 5px;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease;
+	margin-right: 10px; /* Добавим отступ между кнопками */
+}
+
+.apply-button:hover {
+	background-color: #88161b; /* Более темный оттенок для hover состояния */
+}
+
+/* Дополнительные стили для текста внутри услуги */
+.service-block p {
+	font-size: 1rem;
+	line-height: 1.8;
+	margin-bottom: 1.5rem;
+	color: #666;
+	text-align: left;
+}
+.service-title {
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+#publicate {
+	padding-top: 3rem;
+	background-color: white;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+#publicate h1 {
+	text-align: center;
+}
+
+.publication-container {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(300px, 1fr)
+	); /* Адаптивная сетка */
+	gap: 30px; /* Промежутки между блоками */
+	margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.publication-block {
+	background-color: #ffffff;
+	border: none; /* Убираем рамку, чтобы блоки выглядели чище */
+	padding: 20px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+	display: flex;
+	flex-direction: column;
+	height: 100%; /* Блоки одной высоты */
+}
+
+.publication-title {
+	font-family: 'Times New Roman', serif; /* Похожий на скриншоте шрифт */
+	font-weight: bold;
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+
+.publication-content {
+	font-size: 1em;
+	margin-bottom: auto; /* Заполняет пространство между текстом и датой */
+}
+
+.publication-date {
+	font-size: 0.9em;
+	color: #999;
+	text-align: right; /* Выравнивание даты по правому нижнему углу */
+	margin-top: 20px;
+}
+/* Секция формы */
+.contact-form-section {
+	background-color: #f7ebe1; /* Светлый бежевый фон */
+	padding: 40px 20px;
+	position: relative;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+	margin-bottom: -100px; /* Отрицательный отступ для "выпирания" формы над футером */ /* Убедимся, что форма выше футера */ /* Легкая тень для отделения формы от футера */
+}
+
+.contact-form-container {
+	max-width: 500px; /* Уменьшаем ширину формы */
+	margin: 0 auto;
+	background-color: #fff; /* Фон формы */
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.contact-form-container h2 {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #000; /* Черный текст */
+}
+
+.contact-form-container p {
+	font-size: 16px;
+	margin-bottom: 20px;
+	color: #000;
+}
+
+.contact-form-container form {
+	display: flex;
+	flex-direction: column;
+}
+
+.contact-form-container input[type='text'],
+.contact-form-container input[type='tel'],
+.contact-form-container input[type='email'] {
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	width: 100%;
+}
+
+.phone-input {
+	display: flex;
+	width: 100%;
+	align-items: center;
+}
+
+.checkbox {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 15px;
+	font-size: 14px;
+}
+
+.checkbox input {
+	margin-right: 10px;
+}
+
+button[type='submit'] {
+	background-color: #000;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	text-transform: uppercase;
+	margin-top: 20px;
+}
+
+button[type='submit']:hover {
+	background-color: #333;
+}
+
+/* Стили для футера */
+footer {
+	width: 100%;
+	margin: 0 auto;
+	background-color: #a02328; /* Фирменный красный цвет для фона футера */
+	color: #ffffff; /* Белый цвет текста */
+	padding: 100px 0 50px;
+}
+
+.footer-container {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.footer-nav {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	line-height: 1.4rem;
+	list-style: none;
+	margin-bottom: 30px;
+}
+
+.footer-nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.footer-nav a:hover {
+	text-decoration: underline;
+}
+
+.footer-contact p {
+	margin-bottom: 10px;
+}
+
+.footer-contact {
+	margin-top: 2rem;
+	width: 28%;
+	font-size: 14px;
+	color: #000;
+}
